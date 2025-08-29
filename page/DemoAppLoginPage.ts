@@ -28,4 +28,6 @@ export class DemoAppLoginPage extends DemoAppBasePage {
         await expect($(locators.errorMsgLocator)).toBeDisplayed();
         await expect($(locators.errorMsgLocator)).toHaveText(errorMsg)
     }
+
+
 }

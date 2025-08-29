@@ -19,9 +19,11 @@ describe ("mocha", () => {
 
     it('Login with Locked Account', async () => {
         await loginPage.loginCredentials('alice@example.com','10203040')
+        await loginPage.getErrorMsg("Sorry your account is locked")
     })
 
     it('Skip Required Fields', async () => {
-        
+        await loginPage.loginCredentials('','')
+        await loginPage.getErrorMsg("Username is required")
     })
 })
