@@ -58,17 +58,30 @@ export const config: WebdriverIO.Config = {
       // 'appium:deviceName': 'Android GoogleAPI Emulator',
       // 'appium:platformVersion': '12.0',
       // 'appium:automationName': 'UiAutomator2'
+
+      // platformName: "Android",
+      // "appium:deviceName": "Android Device",
+      // "appium:udid":"f35f34aa", // android 11
+      // // "appium:udid": "491f9254", - android 15
+      // "appium:platformVersion": "11",
+      // "appium:automationName": "UiAutomator2",
+      // "appium:appPackage": "com.saucelabs.mydemoapp.android",
+      // "appium:appActivity": "com.saucelabs.mydemoapp.android.view.activities.SplashActivity",
+      // "appium:appWaitActivity": "*",
+      // "appium:noReset": true,
+      // "appium:autoGrantPermissions": true,
+
       platformName: "Android",
       "appium:deviceName": "Android Device",
-      "appium:udid":"f35f34aa", // android 11
-      // "appium:udid": "491f9254", - android 15
-      "appium:platformVersion": "11",
+      "appium:udid": "491f9254",
+      "appium:platformVersion": "15",
       "appium:automationName": "UiAutomator2",
-      "appium:appPackage": "com.saucelabs.mydemoapp.android",
-      "appium:appActivity": "com.saucelabs.mydemoapp.android.view.activities.SplashActivity",
+      "appium:appPackage": "com.saucelabs.mydemoapp.rn",
+      "appium:appActivity": "com.saucelabs.mydemoapp.rn.MainActivity",
       "appium:appWaitActivity": "*",
       "appium:noReset": true,
       "appium:autoGrantPermissions": true,
+      
     },
   ],
 
