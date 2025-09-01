@@ -1,22 +1,18 @@
-import { $ } from '@wdio/globals';
-const locators = {
-    globalHamburger : '//android.view.ViewGroup[@content-desc="open menu"]',
-    loginMenu : '//android.view.ViewGroup[@content-desc="menu item log in"]',
-    aboutMenu : '//android.view.ViewGroup[@content-desc="menu item about"]',
+import { $ } from "@wdio/globals";
+import { DemoAppXpathUtilsJson } from "../utils/DemoAppXpathUtils"; // 1. Imported your XPath utility file
 
-}
+const locators = DemoAppXpathUtilsJson.BasePageXpaths;
 
-export class DemoAppBasePage{
+export class DemoAppBasePage {
+  async clickHamburgerMenu() {
+    await $(locators.globalHamburger).click();
+  }
 
-    async clickHamburgerMenu(){
-        await $(locators.globalHamburger).click()
-    }
+  async redirectToLoginMenu() {
+    await $(locators.loginMenu).click();
+  }
 
-    async redirectToLoginMenu(){
-        await $(locators.loginMenu).click();
-    }
-
-    async redirectToAboutMenu(){
-        await $(locators.aboutMenu).click();
-    }
+  async redirectToAboutMenu() {
+    await $(locators.aboutMenu).click();
+  }
 }

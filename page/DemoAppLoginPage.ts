@@ -1,17 +1,9 @@
 import { $ } from "@wdio/globals";
 import { DemoAppBasePage } from "./DemoAppBasePage"; // correct this path
+import { DemoAppXpathUtilsJson } from "../utils/DemoAppXpathUtils"; // 1. Imported your XPath utility file
 
-const locators = {
-  usernameField:
-    "//android.widget.EditText[@content-desc='Username input field']",
-  passwordField:
-    "//android.widget.EditText[@content-desc='Password input field']",
-  loginButton: "//android.view.ViewGroup[@content-desc='Login button']",
-
-  errorMsgLocator:
-    "//android.view.ViewGroup[@content-desc='generic-error-message']",
-  errMsgUsername: "~Username-error-message",
-};
+// 2. Assigned the XPaths to a constant for easy access within the class
+const locators = DemoAppXpathUtilsJson.LoginPageXpaths;
 
 export class DemoAppLoginPage extends DemoAppBasePage {
   async redirectToLoginModule() {
