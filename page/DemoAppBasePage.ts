@@ -15,4 +15,8 @@ export class DemoAppBasePage {
   async redirectToAboutMenu() {
     await $(locators.aboutMenu).click();
   }
+
+  async redirecToApiCallsPage() {
+    await $(locators.apiCallMenu).click();
+  }
 }

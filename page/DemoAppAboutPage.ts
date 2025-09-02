@@ -1,22 +1,29 @@
-
-import { DemoAppBasePage } from "./DemoAppBasePage";
+import { DemoAppBasePage } from "./DemoAppBasePage"; 
 import { DemoAppXpathUtilsJson } from "../utils/DemoAppXpathUtils";
-import { expect } from "@wdio/globals";
 
-const aboutLocators = DemoAppXpathUtilsJson.AboutPageXpaths;
+const locators = DemoAppXpathUtilsJson.AboutPageXpaths;
 
-export class DemoAppAboutPage extends DemoAppBasePage {
-  async redirecToAboutModule() {
-    await this.clickHamburgerMenu();
-    await this.redirectToAboutMenu();
+export class DemoAppAboutPage {
+  basePage = new DemoAppBasePage();
+
+  async openAboutPage() {
+    await this.basePage.clickHamburgerMenu();
+    await this.basePage.redirectToAboutMenu();
   }
 
-  async validateTheAboutPageElements() {
+  async visibleCheckOfAboutComponents() {
+    const elements = [
+      locators.aboutHeader,
+      locators.imageOne,
+      locators.imageTwo,
+      locators.imageThree,
+      locators.sauceWebsiteLink,
+    ];
 
-  }
-  async clickLinkToWebsite() {
+    for (const locator of elements) {
+      await expect($(locator)).toBeDisplayed();
+    }
 
-    await expect($(aboutLocators.sauceWebsiteLink)).toBeDisplayed();
-
+    await $(locators.sauceWebsiteLink).click();
   }
 }

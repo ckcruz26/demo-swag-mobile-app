@@ -44,7 +44,7 @@ export const config: WebdriverIO.Config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 10,
+  maxInstances: 1,
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -79,9 +79,8 @@ export const config: WebdriverIO.Config = {
       "appium:appPackage": "com.saucelabs.mydemoapp.rn",
       "appium:appActivity": "com.saucelabs.mydemoapp.rn.MainActivity",
       "appium:appWaitActivity": "*",
-      "appium:noReset": true,
+      "appium:noReset": false,
       "appium:autoGrantPermissions": true,
-      
     },
   ],
 
@@ -155,7 +154,16 @@ export const config: WebdriverIO.Config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
-  reporters: ["spec"],
+  reporters: [
+    [
+      "allure",
+      {
+        outputDir: "allure-results",
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false, // <--- important!
+      },
+    ],
+  ],
 
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
