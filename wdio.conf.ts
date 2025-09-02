@@ -1,5 +1,4 @@
-
-import allure from '@wdio/allure-reporter'
+import allure from "@wdio/allure-reporter";
 
 import { config as loadEnv } from "dotenv";
 import * as path from "path";
@@ -9,7 +8,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 loadEnv({ path: path.resolve(__dirname, "config/.env") });
-
 
 export const config: WebdriverIO.Config = {
   //
@@ -89,13 +87,11 @@ export const config: WebdriverIO.Config = {
       "appium:udid": "491f9254",
       "appium:platformVersion": "15",
       "appium:automationName": "UiAutomator2",
-      "appium:appPackage": "com.saucelabs.mydemoapp.rn",
-      "appium:appActivity": "com.saucelabs.mydemoapp.rn.MainActivity",
+      "appium:appPackage": process.env.ANDROID_PKG,
+      "appium:appActivity": process.env.ANDROID_MAIN_ACT,
       "appium:appWaitActivity": "*",
       "appium:noReset": false,
       "appium:autoGrantPermissions": true,
-     
-
     },
   ],
 
@@ -170,15 +166,16 @@ export const config: WebdriverIO.Config = {
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
   reporters: [
-    'spec',
-    ['allure', {
-      outputDir: 'allure-results',
-      disableWebdriverStepsReporting: false,
-      disableWebdriverScreenshotsReporting: false,
-    }]
+    "spec",
+    [
+      "allure",
+      {
+        outputDir: "allure-results",
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false,
+      },
+    ],
   ],
-
-
 
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
@@ -187,37 +184,31 @@ export const config: WebdriverIO.Config = {
     timeout: 60000,
   },
 
-  //
-  // =====
-  // Hooks
-
-
-
-    // ============
+  // ============
   // Hooks
   // ============
   beforeTest: async function () {
     // Start recording before each test
-    await driver.startRecordingScreen()
+    await driver.startRecordingScreen();
   },
 
   afterTest: async function (test, context, { error }) {
     // Always take screenshot
-    const screenshot = await browser.takeScreenshot()
+    const screenshot = await browser.takeScreenshot();
     allure.addAttachment(
       `Screenshot - ${test.title}`,
-      Buffer.from(screenshot, 'base64'),
-      'image/png'
-    )
+      Buffer.from(screenshot, "base64"),
+      "image/png"
+    );
 
     // Stop recording and attach video
-    const video = await driver.stopRecordingScreen()
+    const video = await driver.stopRecordingScreen();
     allure.addAttachment(
       `Video - ${test.title}`,
-      Buffer.from(video, 'base64'),
-      'video/mp4'
-    )
-  }
+      Buffer.from(video, "base64"),
+      "video/mp4"
+    );
+  },
 
   // =====
   // WebdriverIO provides several hooks you can use to interfere with the test process in order to enhance
