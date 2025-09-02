@@ -3,6 +3,7 @@ import allure from "@wdio/allure-reporter";
 import { config as loadEnv } from "dotenv";
 import * as path from "path";
 import { fileURLToPath } from "url";
+import * as fs from "fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -187,13 +188,23 @@ export const config: WebdriverIO.Config = {
   // ============
   // Hooks
   // ============
+  onPrepare: function () {
+    const envProps = `
+      Device=${process.env.DEVICE_NAME || "Unknown"}
+      Platform=${process.env.PLATFORM_NAME || "Unknown"}
+      PlatformVersion=${process.env.PLATFORM_VERSION || "Unknown"}
+    `;
+    fs.writeFileSync("allure-results/environment.properties", envProps);
+  },
+
+  // Start recording screen before each test
   beforeTest: async function () {
-    // Start recording before each test
     await driver.startRecordingScreen();
   },
 
-  afterTest: async function (test, context, { error }) {
-    // Always take screenshot
+  // After each test: screenshot + video
+  afterTest: async function (test) {
+    // Screenshot
     const screenshot = await browser.takeScreenshot();
     allure.addAttachment(
       `Screenshot - ${test.title}`,
@@ -201,7 +212,7 @@ export const config: WebdriverIO.Config = {
       "image/png"
     );
 
-    // Stop recording and attach video
+    // Video
     const video = await driver.stopRecordingScreen();
     allure.addAttachment(
       `Video - ${test.title}`,
