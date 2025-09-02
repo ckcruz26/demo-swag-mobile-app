@@ -1,15 +1,15 @@
 import { DemoAppAboutPage } from "../page/DemoAppAboutPage";
+import { DemoAppConstData } from "../utils/DemoAppConstData";
 
 describe("About Page Suite", () => {
   const aboutPage = new DemoAppAboutPage();
-  const appPackage = "com.saucelabs.mydemoapp.rn";
 
   beforeEach("Start App", async () => {
-    await driver.activateApp(appPackage);
+    await driver.activateApp(DemoAppConstData.AndroidPkg);
   });
 
   afterEach("Close App", async () => {
-    await driver.terminateApp(appPackage);
+    await driver.terminateApp(DemoAppConstData.AndroidPkg);
   });
 
   it("should redirect to About Page", async () => {

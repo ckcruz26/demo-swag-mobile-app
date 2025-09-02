@@ -19,4 +19,8 @@ export class DemoAppBasePage {
   async redirecToApiCallsPage() {
     await $(locators.apiCallMenu).click();
   }
+
+  async redirectToLogout() {
+    await $(locators.logoutMenu).click();
+  }
 }

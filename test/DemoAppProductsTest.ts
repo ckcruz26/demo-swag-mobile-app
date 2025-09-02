@@ -1,14 +1,15 @@
 import { DemoAppProductsPage } from "../page/DemoAppProductsPage";
+import { DemoAppConstData } from "../utils/DemoAppConstData";
 
 describe("Products Suite", () => {
   const productsPage = new DemoAppProductsPage();
 
   beforeEach("Opening the App", async () => {
-    await driver.activateApp("com.saucelabs.mydemoapp.rn");
+    await driver.activateApp(DemoAppConstData.AndroidPkg);
   });
 
   afterEach("Terminate the App", async () => {
-    await driver.terminateApp("com.saucelabs.mydemoapp.rn");
+    await driver.terminateApp(DemoAppConstData.AndroidPkg);
   });
 
   it("Swipe Products Down", async () => {
@@ -25,9 +26,11 @@ describe("Products Suite", () => {
     before(async () => {
       if (!runCartSetup) {
         runCartSetup = true;
-        await driver.activateApp("com.saucelabs.mydemoapp.rn");
-        await productsPage.loginToCheckOut("bob@example.com", "10203040");
-        console.log("Cart setup executed!");
+        await driver.activateApp(DemoAppConstData.AndroidPkg);
+        await productsPage.loginToCheckOut(
+          DemoAppConstData.ValidEmail,
+          DemoAppConstData.ValidPassword
+        );
       }
     });
 

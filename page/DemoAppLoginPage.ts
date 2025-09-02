@@ -5,20 +5,26 @@ import { DemoAppXpathUtilsJson } from "../utils/DemoAppXpathUtils";
 const locators = DemoAppXpathUtilsJson.LoginPageXpaths;
 
 export class DemoAppLoginPage extends DemoAppBasePage {
-  async redirectToLoginModule(){
+  async redirectToLoginModule() {
     await this.clickHamburgerMenu();
     await this.redirectToLoginMenu();
   }
 
-  async loginCredentials(username: string, password: string){
+  async loginCredentials(username: string, password: string) {
     await $(locators.usernameField).setValue(username);
     await $(locators.passwordField).setValue(password);
     await $(locators.loginButton).click();
   }
 
-  async getErrorMsg(expectedMsg: string){
+  async getErrorMsg(expectedMsg: string) {
     const errorElement = await $(locators.errorMsgLocator);
     await expect(errorElement).toBeDisplayed();
     await expect(errorElement).toHaveText(expectedMsg);
   }
+
+  async logoutSession() {
+    await this.clickHamburgerMenu()
+    await this.redirectToLogout()
+    await $(DemoAppXpathUtilsJson.AndroidButtonsXpath.logoutBttn).click()
+  } 
 }

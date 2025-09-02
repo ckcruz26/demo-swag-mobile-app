@@ -47,7 +47,8 @@ export const DemoAppXpathUtilsJson = {
     globalHamburger: '//android.view.ViewGroup[@content-desc="open menu"]',
     loginMenu: '//android.view.ViewGroup[@content-desc="menu item log in"]',
     aboutMenu: '//android.view.ViewGroup[@content-desc="menu item about"]',
-    apiCallMenu : '//android.view.ViewGroup[@content-desc="menu item api calls"]'
+    apiCallMenu : '//android.view.ViewGroup[@content-desc="menu item api calls"]',
+    logoutMenu : '//android.view.ViewGroup[@content-desc="menu item log out"]',
   },
   ProductPageXpaths: {
     product: {
@@ -109,5 +110,13 @@ export const DemoAppXpathUtilsJson = {
     errorMsgLocator:
       "//android.view.ViewGroup[@content-desc='generic-error-message']",
     errMsgUsername: "~Username-error-message",
+
+    productMain : {
+      productHeader : '//android.view.ViewGroup[@content-desc="container header"]/android.widget.TextView'
+    }
   },
+  AndroidButtonsXpath : {
+    logoutBttn : '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]',
+    cancelBttn : '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[1]'
+  }
 };

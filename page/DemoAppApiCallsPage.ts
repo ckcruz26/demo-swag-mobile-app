@@ -26,7 +26,7 @@ export class DemoAppApiCallsPage extends DemoAppBasePage {
     ];
 
     for (const locator of arrLocatorElements) {
-      await expect($(locator)).toBeDisplayed(); // ✅ assertion for visibility
+      await expect($(locator)).toBeDisplayed(); 
     }
   }
 
@@ -39,7 +39,7 @@ export class DemoAppApiCallsPage extends DemoAppBasePage {
     ];
 
     for (const locator of arrLocatorElements) {
-      await expect($(locator)).toBeDisplayed(); // ✅ assertion for visibility
+      await expect($(locator)).toBeDisplayed(); 
       await $(locator).click();
     }
 
