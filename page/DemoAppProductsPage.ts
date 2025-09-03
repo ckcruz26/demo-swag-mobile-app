@@ -20,7 +20,6 @@ export class DemoAppProductsPage extends DemoAppLoginPage {
     await expect(el).toBeEnabled();
     await el.setValue(value);
   }
-
   
   async loginToCheckOut(email: string, password: string) {
     await this.redirectToLoginModule();

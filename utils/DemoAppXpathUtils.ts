@@ -49,6 +49,9 @@ export const DemoAppXpathUtilsJson = {
     aboutMenu: '//android.view.ViewGroup[@content-desc="menu item about"]',
     apiCallMenu : '//android.view.ViewGroup[@content-desc="menu item api calls"]',
     logoutMenu : '//android.view.ViewGroup[@content-desc="menu item log out"]',
+    sauceVideoMenu : '//android.view.ViewGroup[@content-desc="menu item sauce bot video"]',
+    geoLocationMenu : '//android.view.ViewGroup[@content-desc="menu item geo location"]',
+    drawingMenu : '//android.view.ViewGroup[@content-desc="menu item drawing"]'
   },
   ProductPageXpaths: {
     product: {
@@ -118,5 +121,30 @@ export const DemoAppXpathUtilsJson = {
   AndroidButtonsXpath : {
     logoutBttn : '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]',
     cancelBttn : '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[1]'
+  },
+  GeoLocationUtils : {
+     startObservingBttn : '//android.view.ViewGroup[@content-desc="Start Observing button"]',
+     stopObservingBttn : '//android.view.ViewGroup[@content-desc="Stop Observing button"]',
+     geoLocationHeaderTxt : '//android.view.ViewGroup[@content-desc="container header"]/android.widget.TextView',
+     geoLocationParagraphTxt : '//android.view.ViewGroup[@content-desc="geo location screen"]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[1]',
+     geoLocationStatementOne : '//android.view.ViewGroup[@content-desc="geo location screen"]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[2]',
+     geoLocationStatementTwo : '//android.view.ViewGroup[@content-desc="geo location screen"]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[3]',
+     geoLocationLatitudeLongtitudeGroup : '//android.view.ViewGroup[@content-desc="geo location screen"]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]'
+  },
+  SauceVideoUtils : {
+    containerHeader : '//android.view.ViewGroup[@content-desc="container header"]/android.widget.TextView',
+    sauceBotScreen : '//android.view.ViewGroup[@content-desc="SauceBot screen"]/android.view.ViewGroup[2]',
+    stopButton : '//android.view.ViewGroup[@content-desc="video icon stop"]',
+    playButton : '//android.view.ViewGroup[@content-desc="video icon play"]',
+    rewindButton : '//android.view.ViewGroup[@content-desc="video icon backward"]',
+    forwardButton : '//android.view.ViewGroup[@content-desc="video icon forward"]',
+    muteButton : '//android.view.ViewGroup[@content-desc="video icon volume-mute"]',
+    unmuteButton : '//android.view.ViewGroup[@content-desc="video icon volume-up"]'
+  },
+  DrawingUtils : {
+    drawingHeader : '//android.view.ViewGroup[@content-desc="container header"]/android.widget.TextView',
+    drawingScreen : '//android.view.ViewGroup[@content-desc="drawing screen"]/android.view.ViewGroup[2]/android.view.ViewGroup/android.webkit.WebView',
+    clearButton : '//android.view.ViewGroup[@content-desc="Clear button"]',
+    saveButton : '//android.view.ViewGroup[@content-desc="Save button"]'
   }
 };

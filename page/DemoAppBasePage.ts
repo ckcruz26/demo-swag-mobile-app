@@ -23,4 +23,16 @@ export class DemoAppBasePage {
   async redirectToLogout() {
     await $(locators.logoutMenu).click();
   }
+
+  async redirectToSauceVideoPage() {
+    await $(locators.sauceVideoMenu).click();
+  }
+
+  async redirectToDrawingPage() {
+    await $(locators.drawingMenu).click()
+  }
+
+  async redirectToGeoLocationPage() {
+    await $(locators.geoLocationMenu).click()
+  }
 }
