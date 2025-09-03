@@ -93,6 +93,10 @@ export const config: WebdriverIO.Config = {
       "appium:appWaitActivity": "*",
       "appium:noReset": false,
       "appium:autoGrantPermissions": true,
+
+      // optional: ilagay `app` path kung gusto mong fallback installer
+      "appium:app": path.resolve(process.cwd(), process.env.APK_PATH!), 
+      
     },
   ],
 

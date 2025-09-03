@@ -25,7 +25,7 @@ describe("API Calls Suite", () => {
     await apiCallsPage.clickApiMenus();
   });
 
-  it.only("Scroll Api Calls", async () => {
+  it("Scroll Api Calls", async () => {
     await driver.pause(3000);
     await apiCallsPage.swipeDownApiCalls();
   });

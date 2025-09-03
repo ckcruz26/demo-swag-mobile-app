@@ -4,5 +4,6 @@ export const DemoAppConstData = {
     ValidEmail : String (process.env.VALID_EMAIL),
     ValidPassword : String(process.env.VALID_PW),
     LockedEmail : String(process.env.LOCKED_EMAIL),
-    ErrorTxtMsg : String(process.env.ERROR_TXT)
+    ErrorTxtMsg : String(process.env.ERROR_TXT),
+    ApkPath : ''
 }
