@@ -18,7 +18,7 @@ describe("Login Suite", () => {
     await loginPage.logoutSession()
   });
 
-  it.skip("should show error for locked out account", async () => {
+  it("should show error for locked out account", async () => {
     await loginPage.loginCredentials(DemoAppConstData.LockedEmail, DemoAppConstData.ValidPassword);
     await loginPage.getErrorMsg(DemoAppConstData.ErrorTxtMsg);
   });
