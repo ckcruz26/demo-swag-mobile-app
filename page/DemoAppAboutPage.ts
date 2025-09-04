@@ -1,14 +1,12 @@
-import { DemoAppBasePage } from "./DemoAppBasePage"; 
+import { DemoAppBasePage } from "./DemoAppBasePage";
 import { DemoAppXpathUtilsJson } from "../utils/DemoAppXpathUtils";
 
 const locators = DemoAppXpathUtilsJson.AboutPageXpaths;
 
-export class DemoAppAboutPage {
-  basePage = new DemoAppBasePage();
-
+export class DemoAppAboutPage extends DemoAppBasePage {
   async openAboutPage() {
-    await this.basePage.clickHamburgerMenu();
-    await this.basePage.redirectToAboutMenu();
+    await this.clickHamburgerMenu();
+    await this.redirectToAboutMenu();
   }
 
   async visibleCheckOfAboutComponents() {

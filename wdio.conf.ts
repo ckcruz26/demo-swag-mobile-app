@@ -94,7 +94,7 @@ export const config: WebdriverIO.Config = {
       "appium:noReset": false,
       "appium:autoGrantPermissions": true,
 
-      // optional: ilagay `app` path kung gusto mong fallback installer
+      //if the app is not installed in device, fails in this scenario
       "appium:app": path.resolve(process.cwd(), process.env.APK_PATH!), 
       
     },
