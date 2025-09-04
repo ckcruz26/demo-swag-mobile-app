@@ -85,8 +85,8 @@ export const config: WebdriverIO.Config = {
 
       platformName: "Android",
       "appium:deviceName": "Android Device",
-      "appium:udid": "491f9254",
-      "appium:platformVersion": "15",
+      "appium:udid": process.env.UID_DEVICE,
+      "appium:platformVersion": process.env.PLATFORM_VERSION,
       "appium:automationName": "UiAutomator2",
       "appium:appPackage": process.env.ANDROID_PKG,
       "appium:appActivity": process.env.ANDROID_MAIN_ACT,
@@ -95,8 +95,7 @@ export const config: WebdriverIO.Config = {
       "appium:autoGrantPermissions": true,
 
       //if the app is not installed in device, fails in this scenario
-      "appium:app": path.resolve(process.cwd(), process.env.APK_PATH!), 
-      
+      "appium:app": path.resolve(process.cwd(), process.env.APK_PATH!),
     },
   ],
 
@@ -147,7 +146,14 @@ export const config: WebdriverIO.Config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["appium"],
+  services: [
+    [
+      "appium",
+      {
+        logPath: "./",
+      },
+    ],
+  ],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
