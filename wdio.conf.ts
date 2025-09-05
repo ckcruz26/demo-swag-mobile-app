@@ -96,8 +96,8 @@ export const config: WebdriverIO.Config = {
 
       //if the app is not installed in device, fails in this scenario
       "appium:app": path.resolve(process.cwd(), process.env.APK_PATH!),
-    },
-  ],
+    }, 
+  ], 
 
   //
   // ===================

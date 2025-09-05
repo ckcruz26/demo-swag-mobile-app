@@ -51,7 +51,10 @@ export const DemoAppXpathUtilsJson = {
     logoutMenu : '//android.view.ViewGroup[@content-desc="menu item log out"]',
     sauceVideoMenu : '//android.view.ViewGroup[@content-desc="menu item sauce bot video"]',
     geoLocationMenu : '//android.view.ViewGroup[@content-desc="menu item geo location"]',
-    drawingMenu : '//android.view.ViewGroup[@content-desc="menu item drawing"]'
+    drawingMenu : '//android.view.ViewGroup[@content-desc="menu item drawing"]',
+    resetStateMenu : '//android.view.ViewGroup[@content-desc="menu item reset app"]',
+    webViewMenu : '//android.view.ViewGroup[@content-desc="menu item webview"]',
+    fingerPrintMenu : '//android.view.ViewGroup[@content-desc="menu item biometrics"]'
   },
   ProductPageXpaths: {
     product: {
@@ -119,6 +122,7 @@ export const DemoAppXpathUtilsJson = {
     }
   },
   AndroidButtonsXpath : {
+    resetAppBttn : '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]',               
     logoutBttn : '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]',
     cancelBttn : '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[1]'
   },
@@ -146,5 +150,13 @@ export const DemoAppXpathUtilsJson = {
     drawingScreen : '//android.view.ViewGroup[@content-desc="drawing screen"]/android.view.ViewGroup[2]/android.view.ViewGroup/android.webkit.WebView',
     clearButton : '//android.view.ViewGroup[@content-desc="Clear button"]',
     saveButton : '//android.view.ViewGroup[@content-desc="Save button"]'
+  },
+  WebViewUtils : {
+    webviewHeader : '//android.view.ViewGroup[@content-desc="container header"]/android.widget.TextView',
+    urlTxtHeader : '//android.view.ViewGroup[@content-desc="webview selection screen"]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[1]',
+    urlTxtField : '//android.widget.EditText[@content-desc="URL input field"]',
+    instructTxt : '//android.view.ViewGroup[@content-desc="webview selection screen"]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[2]',
+    goToSiteBttn : '//android.view.ViewGroup[@content-desc="Go To Site button"]',
+    errMsg : '//android.view.ViewGroup[@content-desc="URL-error-message"]/android.widget.TextView'
   }
 };

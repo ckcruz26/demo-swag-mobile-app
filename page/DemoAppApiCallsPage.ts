@@ -9,7 +9,7 @@ export class DemoAppApiCallsPage extends DemoAppBasePage {
 
   async redirectToApiCallModule() {
     await this.clickHamburgerMenu(); // inherited from BasePage
-    await this.redirecToApiCallsPage(); // inherited from BasePage
+    await this.redirectToApiCallsPage(); // inherited from BasePage
   }
 
   async getApiCallHeader() {

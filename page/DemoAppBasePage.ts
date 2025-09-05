@@ -1,38 +1,51 @@
 import { $ } from "@wdio/globals";
-import { DemoAppXpathUtilsJson } from "../utils/DemoAppXpathUtils"; // 1. Imported your XPath utility file
+import { DemoAppXpathUtilsJson } from "../utils/DemoAppXpathUtils";
 
 const locators = DemoAppXpathUtilsJson.BasePageXpaths;
 
 export class DemoAppBasePage {
+  async clickMenu(menu: keyof typeof locators) {
+    await $(locators[menu]).click();
+  }
+
+  // convenience methods (optional, para readable pa rin sa tests)
   async clickHamburgerMenu() {
-    await $(locators.globalHamburger).click();
+    await this.clickMenu("globalHamburger");
   }
 
   async redirectToLoginMenu() {
-    await $(locators.loginMenu).click();
+    await this.clickMenu("loginMenu");
   }
 
   async redirectToAboutMenu() {
-    await $(locators.aboutMenu).click();
+    await this.clickMenu("aboutMenu");
   }
 
-  async redirecToApiCallsPage() {
-    await $(locators.apiCallMenu).click();
+  async redirectToApiCallsPage() {
+    await this.clickMenu("apiCallMenu");
   }
 
   async redirectToLogout() {
-    await $(locators.logoutMenu).click();
+    await this.clickMenu("logoutMenu");
   }
 
   async redirectToSauceVideoPage() {
-    await $(locators.sauceVideoMenu).click();
+    await this.clickMenu("sauceVideoMenu");
   }
 
   async redirectToDrawingPage() {
-    await $(locators.drawingMenu).click()
+    await this.clickMenu("drawingMenu");
   }
 
   async redirectToGeoLocationPage() {
-    await $(locators.geoLocationMenu).click()
+    await this.clickMenu("geoLocationMenu");
+  }
+
+  async clickResetStateMenu() {
+    await this.clickMenu("resetStateMenu");
+  }
+
+  async redirectToWebViewPage () {
+    await this.clickMenu('webViewMenu')
   }
 }
