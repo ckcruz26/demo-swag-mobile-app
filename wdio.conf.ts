@@ -56,33 +56,27 @@ export const config: WebdriverIO.Config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 1,
+  maxInstances: 2,
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
   // https://saucelabs.com/platform/platform-configurator
   //
   capabilities: [
+    // {
+    //   platformName: "Android",
+    //   "appium:deviceName": "Android 11 Device",
+    //   "appium:udid": "f35f34aa", // first device
+    //   "appium:platformVersion": "11",
+    //   "appium:automationName": "UiAutomator2",
+    //   "appium:appPackage": process.env.ANDROID_PKG,
+    //   "appium:appActivity": process.env.ANDROID_MAIN_ACT,
+    //   "appium:appWaitActivity": "*",
+    //   "appium:noReset": false,
+    //   "appium:autoGrantPermissions": true,
+    //   "appium:app": path.resolve(process.cwd(), process.env.APK_PATH!),
+    // },
     {
-      // capabilities for local Appium web tests on an Android Emulator
-      // platformName: 'Android',
-      // browserName: 'Chrome',
-      // 'appium:deviceName': 'Android GoogleAPI Emulator',
-      // 'appium:platformVersion': '12.0',
-      // 'appium:automationName': 'UiAutomator2'
-
-      // platformName: "Android",
-      // "appium:deviceName": "Android Device",
-      // "appium:udid":"f35f34aa", // android 11
-      // // "appium:udid": "491f9254", - android 15
-      // "appium:platformVersion": "11",
-      // "appium:automationName": "UiAutomator2",
-      // "appium:appPackage": "com.saucelabs.mydemoapp.android",
-      // "appium:appActivity": "com.saucelabs.mydemoapp.android.view.activities.SplashActivity",
-      // "appium:appWaitActivity": "*",
-      // "appium:noReset": true,
-      // "appium:autoGrantPermissions": true,
-
       platformName: "Android",
       "appium:deviceName": "Android Device",
       "appium:udid": process.env.UID_DEVICE,
@@ -96,8 +90,8 @@ export const config: WebdriverIO.Config = {
 
       //if the app is not installed in device, fails in this scenario
       "appium:app": path.resolve(process.cwd(), process.env.APK_PATH!),
-    }, 
-  ], 
+    },
+  ],
 
   //
   // ===================
