@@ -158,5 +158,13 @@ export const DemoAppXpathUtilsJson = {
     instructTxt : '//android.view.ViewGroup[@content-desc="webview selection screen"]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[2]',
     goToSiteBttn : '//android.view.ViewGroup[@content-desc="Go To Site button"]',
     errMsg : '//android.view.ViewGroup[@content-desc="URL-error-message"]/android.widget.TextView'
+  },
+  FingerPrintUtils : {
+    fingerPrintHeader : '//android.widget.TextView[@text="FingerPrint"]',
+    fingerPrintToggleLabel : '//android.widget.TextView[@text="Allow login with FingerPrint"]',
+    fingerPrintToggleSwitch : '//android.widget.Switch[@content-desc="biometrics switch"]',
+    fingerPrintLabelOne : '//android.widget.TextView[@text="If your devices supports FingerPrint you can enable it here. This will help you to easily log in."]',
+    fingerPrintLabelTwo : '//android.widget.TextView[@text="Normally this screen would be behind a secure login, but for demo purposes this screen has been put in the menu by default."]'
+
   }
 };

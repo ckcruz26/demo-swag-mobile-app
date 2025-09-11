@@ -48,4 +48,8 @@ export class DemoAppBasePage {
   async redirectToWebViewPage () {
     await this.clickMenu('webViewMenu')
   }
+
+  async redirectToFingerPrintPage () {
+    await this.clickMenu('fingerPrintMenu')
+  }
 }
